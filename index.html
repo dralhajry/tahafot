@@ -7,7 +7,10 @@
 <meta name="description" content="تهافت البصائر: قراءة نقدية في كتاب «بصائر» لهيثم طلعت، في ٢١٠ فصول تقابل كل نقل بأصله. الكتاب مجاني للتنزيل والنشر.">
 <meta property="og:title" content="تهافت البصائر">
 <meta property="og:description" content="أكثر ما في هذا الكتاب وُجد في الصفحة التالية. كتاب مجاني في ٢١٠ فصول.">
-<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image" content="https://tahafot.com/og.jpg">
+<meta property="og:url" content="https://tahafot.com/">
+<link rel="canonical" href="https://tahafot.com/">
+<meta name="twitter:creator" content="@evo10111">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#EDEDEA">
@@ -15,16 +18,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
-<link rel="preload" href="assets/fonts/thmanyahsans-Black.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="thmanyahsans-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <script src="config.js"></script>
 <style>
 /* خط ثمانية، بإذن من ثمانية */
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Thmanyah Sans";src:url("assets/fonts/thmanyahsans-Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("thmanyahsans-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("thmanyahsans-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("thmanyahsans-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("thmanyahsans-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("thmanyahsans-Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
 :root{
   --plaster:#EDEDEA;   /* خلفية: جص الغلاف */
   --sheet:#F9F9F7;     /* ورق */
@@ -151,7 +154,7 @@ section.block{padding:110px 0}
 .vid:focus-visible{outline:3px solid var(--pen);outline-offset:4px}
 .vids.feature .vid:first-child{grid-column:span 2;grid-row:span 2}
 .vids.feature .vid:first-child h3{font-size:21px}
-.playlist{aspect-ratio:16/9;width:100%;border:0;background:#000}
+.playlist{aspect-ratio:16/9;width:100%;max-width:880px;display:block;border:0;background:#000}
 .soon{background:var(--sheet);box-shadow:var(--shadow);padding:42px 36px;max-width:640px}
 .soon p{margin:0 0 20px}
 @media (max-width:900px){.vids{grid-template-columns:1fr 1fr}.vids.feature .vid:first-child{grid-column:span 2;grid-row:auto}}
@@ -204,7 +207,7 @@ footer .fine{width:100%;color:var(--muted);font-size:13.5px;margin:0}
   <div class="wrap">
     <div>
       <h1 class="title" aria-label="تهافت البصائر">
-        <span class="over" aria-hidden="true"><img src="assets/tahafut-word.svg" width="3237" height="1013" alt=""></span>
+        <span class="over" aria-hidden="true"><img src="tahafut-word.svg" width="3237" height="1013" alt=""></span>
         <span class="main" aria-hidden="true">بصائر</span>
       </h1>
       <p class="by">د. أبو داروين</p>
@@ -216,7 +219,7 @@ footer .fine{width:100%;color:var(--muted);font-size:13.5px;margin:0}
         <small data-meta></small>
       </div>
     </div>
-    <div class="cover"><img src="assets/cover.jpg" width="900" height="1265" alt="غلاف كتاب تهافت البصائر، د. أبو داروين"></div>
+    <div class="cover"><img src="cover.jpg" width="900" height="1265" alt="غلاف كتاب تهافت البصائر، د. أبو داروين"></div>
   </div>
 </header>
 
@@ -294,12 +297,12 @@ footer .fine{width:100%;color:var(--muted);font-size:13.5px;margin:0}
 
 <section class="download" id="download">
   <div class="wrap">
-    <img src="assets/cover.jpg" width="900" height="1265" alt="" loading="lazy">
+    <img src="cover.jpg" width="900" height="1265" alt="" loading="lazy">
     <div>
       <h2 class="h2">الكتاب مجاني</h2>
       <p>نسخة إلكترونية كاملة بصيغة PDF، بفهرس ينقل إلى كل فصل، وحواش في أسفل كل صفحة. انشره كما تشاء.</p>
       <div class="cta">
-        <a class="btn dl" data-pdf download href="assets/tahafut-albasair.pdf">تنزيل PDF</a>
+        <a class="btn dl" data-pdf download href="tahafut-albasair.pdf">تنزيل PDF</a>
         <button class="btn ghost" id="share" type="button">انسخ رابط الصفحة</button>
       </div>
       <small data-meta></small>
@@ -315,7 +318,7 @@ footer .fine{width:100%;color:var(--muted);font-size:13.5px;margin:0}
       <a data-link="xUrl" href="#" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9.1L.9 2.3h7l4.8 6.4zm-1.2 18h1.9L7.1 4.2H5.1z"/></svg>إكس</a>
       <a data-link="tiktokUrl" href="#" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.4 6.4 0 1 0 5.4 6.3V8.6a7.9 7.9 0 0 0 4.6 1.5V6.7a4.6 4.6 0 0 1-4.6-4.7z"/></svg>تيك توك</a>
     </div>
-    <p class="fine">د. أبو داروين. الكتاب متاح للتنزيل والنشر مجانا.</p>
+    <p class="fine">د. أبو داروين (<a href="https://x.com/evo10111" rel="noopener" target="_blank">@evo10111</a>). الكتاب متاح للتنزيل والنشر مجانا.</p>
   </div>
 </footer>
 
@@ -369,7 +372,7 @@ function render(term){
   box.innerHTML = html || '<p class="empty">لا يوجد فصل بهذا اللفظ. جرّب كلمة أخرى، أو رقم السؤال في «بصائر».</p>';
   qc.textContent = t ? `${AR(n)} ${n>2&&n<11?'نتائج':'نتيجة'}` : '';
 }
-fetch('assets/chapters.json').then(r => r.json()).then(d => { TOC = d; render(''); }).catch(() => box.innerHTML = '<p class="empty">تعذر تحميل الفهرس. أعد تحميل الصفحة.</p>');
+fetch('chapters.json').then(r => r.json()).then(d => { TOC = d; render(''); }).catch(() => box.innerHTML = '<p class="empty">تعذر تحميل الفهرس. أعد تحميل الصفحة.</p>');
 q.addEventListener('input', e => render(e.target.value));
 
 // الفيديوهات
