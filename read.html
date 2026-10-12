@@ -9,6 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23BD3C47'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Tahoma' font-weight='700'%3Eت%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="site.css">
 <script src="config.js"></script>
+<script src="comments.js"></script>
 <script>try{var t=localStorage.getItem('tb-theme');if(t&&t!=='auto')document.documentElement.dataset.theme=t;var f=localStorage.getItem('tb-font');if(f)document.documentElement.dataset.font=f;var s=localStorage.getItem('tb-size');if(s)document.documentElement.style.setProperty('--fs',s+'px')}catch(e){}</script>
 <style>
 :root{--fs:19px;--body:var(--sans)}
@@ -262,13 +263,8 @@ async function route(){
 function cusdisTheme(){}
 function comments(id, c){
   const box = $('cm-box'); if (!box) return;
-  if (!S.disqusShortname) { box.innerHTML = `<p>صندوق التعليقات قيد الإعداد. أرسل ملاحظتك على هذا الفصل إلى <a href="mailto:${esc(S.email||'')}?subject=${encodeURIComponent('الفصل ' + c[1])}">${esc(S.email||'')}</a>.</p>`; return; }
-  const cfg = function(){ this.page.url = 'https://tahafot.com/read.html#!' + id; this.page.identifier = 'ch-' + id; this.page.title = 'الفصل ' + c[1] + ': ' + c[2]; this.language = 'ar'; };
-  const holder = document.getElementById('disqus_thread');
-  if (holder && holder.parentNode !== box) box.appendChild(holder);
-  if (!holder) box.innerHTML = '<div id="disqus_thread"></div>';
-  if (window.DISQUS) { window.DISQUS.reset({reload:true, config:cfg}); }
-  else { window.disqus_config = cfg; const s = document.createElement('script'); s.src = `https://${S.disqusShortname}.disqus.com/embed.js`; s.setAttribute('data-timestamp', +new Date()); s.async = true; document.body.appendChild(s); }
+  const fallback = () => { box.innerHTML = `<p>صندوق التعليقات قيد الإعداد. أرسل ملاحظتك على هذا الفصل إلى <a href="mailto:${esc(S.email||'')}?subject=${encodeURIComponent('الفصل ' + c[1])}">${esc(S.email||'')}</a>.</p>`; };
+  window.walineMount(box, '/chapter/' + id).then(ok => { if (!ok) fallback(); }).catch(fallback);
 }
 
 document.querySelectorAll('.bar .seg [data-ed]').forEach(b => b.onclick = () => { if (b.dataset.ed !== ed) location.hash = `${b.dataset.ed}/${cur ? cur.id : ''}`; });

@@ -7,11 +7,11 @@
 والصق فيه محتوى الملف الذي بالاسم نفسه في المجلد.
 احذف من المستودع الملفات القديمة التي لم تعد مستعملة: tahafut-albasair.pdf وchapters.json وtahafut-word.svg والمجلد scripts.
 
-## التعليقات (مرة واحدة)
-1. أنشئ حسابا مجانيا في disqus.com، واختر «I want to install Disqus on my site».
-2. اكتب اسم الموقع، وانسخ الاسم المختصر (Shortname) الذي يظهر لك، مثل tahafot.
-3. ضعه في config.js مكان disqusShortname.
-4. من إعدادات Disqus يمكنك السماح بالتعليق دون حساب (Guest Commenting)، وتفعيل مراجعة التعليقات قبل نشرها.
+## التعليقات (Waline، مرة واحدة)
+1. ادخل vercel.com بحساب GitHub، وانشر قالب Waline من زر Deploy في waline.js.org.
+2. من Storage أنشئ قاعدة Neon، وشغّل فيها ملف waline.pgsql، ثم أعد النشر (Redeploy).
+3. ضع رابط المشروع في config.js مكان walineServer.
+4. ادخل <الرابط>/ui/register وسجل، فأول مسجل هو المدير الذي يراجع التعليقات.
 
 ## نموذج التواصل (مرة واحدة)
 أول رسالة تُرسل من الموقع يصل بسببها بريد تفعيل من FormSubmit إلى tahafot.books@gmail.com. اضغط زر التفعيل فيه، وبعدها تصلك كل الرسائل.
