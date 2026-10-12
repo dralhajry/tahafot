@@ -8,7 +8,7 @@ window.SITE = {
 
   // التعليقات (Waline): عنوان خادم التعليقات على Vercel، مثل "https://tahafot-comments.vercel.app".
   // ما دام فارغا يظهر للزائر رابط مراسلة بدل صندوق التعليقات.
-  walineServer: "",
+  walineServer: "https://tahafot-comments.vercel.app",
 
   // روابط فيديو كل فصل: رقم الفصل ثم الرابط. الفصل الذي ليس له رابط ينقل إلى القناة.
   // مثال: "29": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
