@@ -49,3 +49,7 @@ bdi{unicode-bidi:isolate}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
 .foot a{text-decoration:none;font-weight:700;color:var(--ink)}
 .foot .grow{margin-inline-start:auto}
+
+/* صندوق التعليقات بألوان الموقع */
+[data-waline]{--waline-theme-color:#BD3C47;--waline-active-color:#A3303B;--waline-font-size:16px;font-family:var(--sans)}
+[data-waline] .wl-editor,[data-waline] input{font-family:var(--sans)}
