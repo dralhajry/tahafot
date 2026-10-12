@@ -174,6 +174,8 @@ const store = { get(k){ try { return localStorage.getItem(k); } catch(e) { retur
 const root = document.documentElement, $ = id => document.getElementById(id);
 const ED_NAME = {full:'النسخة الكاملة', sum:'النسخة الملخصة'};
 const TOC = {}, PARTS = {};
+const AUTO = {};
+const vidsReady = fetch('videos.json', {cache:'no-cache'}).then(r => r.json()).then(list => { (list||[]).forEach(v => { const m = String(v.title||'').match(/السؤال\s*([٠-٩0-9]+)/); if (m) { const n = m[1].replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)); if (!AUTO[n]) AUTO[n] = 'https://www.youtube.com/watch?v=' + v.id; } }); }).catch(() => {});
 let ed = 'full', cur = null;
 
 // ===== الإعدادات =====
@@ -235,7 +237,8 @@ async function route(){
   try { data = (await getPart(p.f))[id]; } catch(err) { main.innerHTML = '<p class="load">تعذر تحميل الفصل. تأكد من اتصالك بالإنترنت ثم <a href="">أعد تحميل الصفحة</a>.</p>'; return; }
   cur = {id, data};
   const list = flat(), k = list.findIndex(x => x.id === id), prev = list[k-1], next = list[k+1];
-  const vurl = (S.chapterVideos||{})[id], vid = ytId(vurl);
+  await vidsReady;
+  const vurl = (S.chapterVideos||{})[id] || id.split('-').map(x => AUTO[x]).find(Boolean), vid = ytId(vurl);
   const notes = data.n || {}, nn = Object.keys(notes);
   main.innerHTML = `<p class="part">${esc(p.t)}: ${esc(p.s)} <span aria-hidden="true">|</span> ${ED_NAME[ed]}</p>
     <div class="chh"><span class="num${id.includes('-') ? ' sm' : ''}">${esc(c[1])}</span><h1>${esc(c[2])}</h1></div>
