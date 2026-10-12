@@ -1,15 +1,25 @@
 // إعدادات الموقع: هذا هو الملف الوحيد الذي تحتاج إلى تعديله.
 window.SITE = {
-  // معرف قناة يوتيوب، يبدأ بـ UC (من YouTube Studio > الإعدادات > القناة > الإعدادات المتقدمة)
   youtubeChannelId: "UCv8FKbYKm8WvZjFiXKVZmvQ",
-
-  // روابط الحسابات
-  youtubeUrl: "https://www.youtube.com/@Tahafut-books",   // رابط قناة «تهافت»
+  youtubeUrl: "https://www.youtube.com/@Tahafut-books",
   xUrl: "https://x.com/evo10111",
-  tiktokUrl: "https://www.tiktok.com/@",      // رابط حساب تيك توك (اتركه هكذا ليُخفى الزر)
+  xHandle: "@evo10111",
+  email: "tahafot.books@gmail.com",
 
-  // ملف الكتاب (في جذر المستودع)
-  pdfFile: "tahafut-albasair.pdf",
-  pdfSizeMB: 5.7,
-  pages: 1450
+  // التعليقات: أنشئ حسابا مجانيا في cusdis.com، ثم أضف موقعا، وانسخ App ID هنا.
+  // ما دام فارغا يظهر للزائر رابط مراسلة بدل صندوق التعليقات.
+  cusdisAppId: "",
+
+  // روابط فيديو كل فصل: رقم الفصل ثم الرابط. الفصل الذي ليس له رابط ينقل إلى القناة.
+  // مثال: "29": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+  chapterVideos: {
+  },
+
+  // ملفات الكتاب
+  downloads: {
+    full_a4:      { file: "tahafut-full-a4.pdf",      name: "تهافت البصائر - النسخة الكاملة.pdf",       pages: 1157, mb: 5.7 },
+    summary_a4:   { file: "tahafut-summary-a4.pdf",   name: "تهافت البصائر - النسخة الملخصة.pdf",       pages: 714,  mb: 3.0 },
+    full_mobile:  { file: "tahafut-full-mobile.pdf",  name: "تهافت البصائر - نسخة الجوال الكاملة.pdf",  pages: 2500, mb: 6.7 },
+    summary_mobile:{ file: "tahafut-summary-mobile.pdf", name: "تهافت البصائر - نسخة الجوال الملخصة.pdf", pages: 1507, mb: 3.6 }
+  }
 };
