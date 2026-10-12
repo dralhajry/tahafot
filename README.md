@@ -8,9 +8,10 @@
 احذف من المستودع الملفات القديمة التي لم تعد مستعملة: tahafut-albasair.pdf وchapters.json وtahafut-word.svg والمجلد scripts.
 
 ## التعليقات (مرة واحدة)
-1. أنشئ حسابا مجانيا في cusdis.com وأضف موقعا باسم tahafot.com.
-2. انسخ App ID وضعه في config.js مكان cusdisAppId.
-3. تصلك كل تعليق على بريدك لتوافق عليه قبل نشره.
+1. أنشئ حسابا مجانيا في disqus.com، واختر «I want to install Disqus on my site».
+2. اكتب اسم الموقع، وانسخ الاسم المختصر (Shortname) الذي يظهر لك، مثل tahafot.
+3. ضعه في config.js مكان disqusShortname.
+4. من إعدادات Disqus يمكنك السماح بالتعليق دون حساب (Guest Commenting)، وتفعيل مراجعة التعليقات قبل نشرها.
 
 ## نموذج التواصل (مرة واحدة)
 أول رسالة تُرسل من الموقع يصل بسببها بريد تفعيل من FormSubmit إلى tahafot.books@gmail.com. اضغط زر التفعيل فيه، وبعدها تصلك كل الرسائل.

@@ -6,9 +6,9 @@ window.SITE = {
   xHandle: "@evo10111",
   email: "tahafot.books@gmail.com",
 
-  // التعليقات: أنشئ حسابا مجانيا في cusdis.com، ثم أضف موقعا، وانسخ App ID هنا.
+  // التعليقات: اسم الموقع المختصر (Shortname) في Disqus، مثل "tahafot".
   // ما دام فارغا يظهر للزائر رابط مراسلة بدل صندوق التعليقات.
-  cusdisAppId: "",
+  disqusShortname: "",
 
   // روابط فيديو كل فصل: رقم الفصل ثم الرابط. الفصل الذي ليس له رابط ينقل إلى القناة.
   // مثال: "29": "https://www.youtube.com/watch?v=XXXXXXXXXXX",

@@ -214,7 +214,7 @@ form input:focus,form textarea:focus{border-color:var(--ink);outline:none}
   <div class="wrap talk">
     <div>
       <h2>النقاش</h2>
-      <p class="intro">اكتب رأيك أو اعتراضك على الكتاب. تُنشر التعليقات بعد مراجعتها. ولكل فصل نقاش خاص به في آخره.</p>
+      <p class="intro">اكتب رأيك أو اعتراضك على الكتاب. ولكل فصل نقاش خاص به في آخره.</p>
       <div class="panel"><div id="comments"></div><p id="comments-note" hidden></p></div>
     </div>
     <div id="contact">
@@ -342,14 +342,14 @@ form.addEventListener('submit', async e => {
 // التعليقات العامة
 (function(){
   const box = document.getElementById('comments'), note = document.getElementById('comments-note');
-  if (!S.cusdisAppId) {
+  if (!S.disqusShortname) {
     note.hidden = false;
     note.innerHTML = `صندوق التعليقات قيد الإعداد. إلى أن يعمل، أرسل رأيك من نموذج التواصل أو إلى <a href="mailto:${mail}">${mail}</a>.`;
     return;
   }
-  box.id = 'cusdis_thread';
-  Object.assign(box.dataset, {host:'https://cusdis.com', appId:S.cusdisAppId, pageId:'general', pageUrl:location.origin + '/', pageTitle:'النقاش العام', theme:'light'});
-  const s = document.createElement('script'); s.src = 'https://cusdis.com/js/cusdis.es.js'; s.async = true; s.defer = true; document.body.appendChild(s);
+  box.id = 'disqus_thread';
+  window.disqus_config = function(){ this.page.url = 'https://tahafot.com/'; this.page.identifier = 'general'; this.page.title = 'النقاش العام'; this.language = 'ar'; };
+  const s = document.createElement('script'); s.src = `https://${S.disqusShortname}.disqus.com/embed.js`; s.setAttribute('data-timestamp', +new Date()); s.async = true; document.body.appendChild(s);
 })();
 })();
 </script>

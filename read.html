@@ -246,7 +246,7 @@ async function route(){
       : `<a class="vcard" href="${esc(S.youtubeUrl||'#')}" target="_blank" rel="noopener"><span class="sq"><span><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="tx"><b>شاهد شروح الكتاب على يوتيوب</b><small>حلقة هذا الفصل لم تُنشر بعد. هذه قناة «تهافت»</small></span><span class="ar">‹</span></a>`}
     <article id="text">${data.h}</article>
     ${nn.length ? `<details class="sources"><summary>مصادر هذا الفصل (${AR(nn.length)})</summary><ol>${nn.map(n => `<li><span class="dot">${AR(n)}</span><div>${notes[n]}</div></li>`).join('')}</ol></details>` : ''}
-    <section class="cm" aria-labelledby="cmh"><h2 id="cmh">النقاش حول هذا الفصل</h2><p>تُنشر التعليقات بعد مراجعتها.</p><div id="cm-box"></div></section>
+    <section class="cm" aria-labelledby="cmh"><h2 id="cmh">النقاش حول هذا الفصل</h2><div id="cm-box"></div></section>
     <nav class="pn" aria-label="التنقل بين الفصول">
       <a href="${prev ? `#${ed}/${prev.id}` : '#'}" ${prev ? '' : 'hidden'}><span>الفصل السابق</span>${prev ? esc(prev.num + '- ' + prev.title) : ''}</a>
       <a class="next" href="${next ? `#${ed}/${next.id}` : '#'}" ${next ? '' : 'hidden'}><span>الفصل التالي</span>${next ? esc(next.num + '- ' + next.title) : ''}</a>
@@ -259,14 +259,16 @@ async function route(){
 }
 
 // ===== التعليقات لكل فصل =====
-function cusdisTheme(){ try { window.CUSDIS && window.CUSDIS.setTheme && window.CUSDIS.setTheme(root.dataset.theme || 'auto'); } catch(e) {} }
+function cusdisTheme(){}
 function comments(id, c){
   const box = $('cm-box'); if (!box) return;
-  if (!S.cusdisAppId) { box.innerHTML = `<p>صندوق التعليقات قيد الإعداد. أرسل ملاحظتك على هذا الفصل إلى <a href="mailto:${esc(S.email||'')}?subject=${encodeURIComponent('الفصل ' + c[1])}">${esc(S.email||'')}</a>.</p>`; return; }
-  box.innerHTML = '<div id="cusdis_thread"></div>';
-  Object.assign($('cusdis_thread').dataset, {host:'https://cusdis.com', appId:S.cusdisAppId, pageId:'ch-' + id, pageUrl:location.origin + '/read.html#full/' + id, pageTitle:'الفصل ' + c[1] + ': ' + c[2], theme:root.dataset.theme || 'auto'});
-  if (window.CUSDIS && window.CUSDIS.initial) { window.CUSDIS.initial(); }
-  else if (!document.querySelector('script[data-cusdis]')) { const s = document.createElement('script'); s.src = 'https://cusdis.com/js/cusdis.es.js'; s.async = true; s.dataset.cusdis = '1'; document.body.appendChild(s); }
+  if (!S.disqusShortname) { box.innerHTML = `<p>صندوق التعليقات قيد الإعداد. أرسل ملاحظتك على هذا الفصل إلى <a href="mailto:${esc(S.email||'')}?subject=${encodeURIComponent('الفصل ' + c[1])}">${esc(S.email||'')}</a>.</p>`; return; }
+  const cfg = function(){ this.page.url = 'https://tahafot.com/read.html#!' + id; this.page.identifier = 'ch-' + id; this.page.title = 'الفصل ' + c[1] + ': ' + c[2]; this.language = 'ar'; };
+  const holder = document.getElementById('disqus_thread');
+  if (holder && holder.parentNode !== box) box.appendChild(holder);
+  if (!holder) box.innerHTML = '<div id="disqus_thread"></div>';
+  if (window.DISQUS) { window.DISQUS.reset({reload:true, config:cfg}); }
+  else { window.disqus_config = cfg; const s = document.createElement('script'); s.src = `https://${S.disqusShortname}.disqus.com/embed.js`; s.setAttribute('data-timestamp', +new Date()); s.async = true; document.body.appendChild(s); }
 }
 
 document.querySelectorAll('.bar .seg [data-ed]').forEach(b => b.onclick = () => { if (b.dataset.ed !== ed) location.hash = `${b.dataset.ed}/${cur ? cur.id : ''}`; });
