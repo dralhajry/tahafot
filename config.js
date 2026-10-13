@@ -4,7 +4,11 @@ window.SITE = {
   youtubeUrl: "https://www.youtube.com/@Tahafut-books",
   xUrl: "https://x.com/evo10111",
   xHandle: "@evo10111",
-  email: "tahafot.books@gmail.com",
+  email: "tahafut.books@gmail.com",
+
+  // إحصاءات الزيارات (GoatCounter): اسم الحساب الذي اخترته عند التسجيل، مثل "tahafut".
+  // لوحة الإحصاءات خاصة بك وحدك على https://<الاسم>.goatcounter.com
+  goatcounter: "",
 
   // التعليقات (Waline): عنوان خادم التعليقات على Vercel، مثل "https://tahafot-comments.vercel.app".
   // ما دام فارغا يظهر للزائر رابط مراسلة بدل صندوق التعليقات.

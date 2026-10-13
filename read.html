@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="site.css">
 <script src="config.js"></script>
 <script src="comments.js"></script>
+<script src="analytics.js"></script>
 <script>try{var t=localStorage.getItem('tb-theme');if(t&&t!=='auto')document.documentElement.dataset.theme=t;var f=localStorage.getItem('tb-font');if(f)document.documentElement.dataset.font=f;var s=localStorage.getItem('tb-size');if(s)document.documentElement.style.setProperty('--fs',s+'px')}catch(e){}</script>
 <style>
 :root{--fs:19px;--body:var(--sans)}
@@ -255,6 +256,7 @@ async function route(){
   $('where').textContent = `الفصل ${c[1]}: ${c[2]}`;
   document.title = `${c[1]}- ${c[2]} | تهافت البصائر`;
   store.set('tb-last', JSON.stringify({ed, id, num:c[1], title:c[2]}));
+  window.tbCount('/read/' + ed + '/' + id, document.title);
   closeDrawer(); closePop(); window.scrollTo(0,0); prog();
   comments(id, c);
 }
