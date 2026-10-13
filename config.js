@@ -8,7 +8,7 @@ window.SITE = {
 
   // إحصاءات الزيارات (GoatCounter): اسم الحساب الذي اخترته عند التسجيل، مثل "tahafut".
   // لوحة الإحصاءات خاصة بك وحدك على https://<الاسم>.goatcounter.com
-  goatcounter: "",
+  goatcounter: "tahafot",
 
   // التعليقات (Waline): عنوان خادم التعليقات على Vercel، مثل "https://tahafot-comments.vercel.app".
   // ما دام فارغا يظهر للزائر رابط مراسلة بدل صندوق التعليقات.
