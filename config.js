@@ -17,6 +17,7 @@ window.SITE = {
   // روابط فيديو كل فصل: رقم الفصل ثم الرابط. الفصل الذي ليس له رابط ينقل إلى القناة.
   // مثال: "29": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
   chapterVideos: {
+    "3-5": "https://youtu.be/FQWrFAhxm6w",
     "6": "https://youtu.be/pqAJNSxp5NM",
     "7": "https://youtu.be/ehggyN7CP18",
     "8": "https://youtu.be/nrlSZt23kQc",
